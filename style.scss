@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+$color-text: #32353C;
+$color-accent: #B79B6C;
+$color-bg: #FFFFFF;
+$color-back: #F4F4F4;
+
+@mixin mq-pc() {
+    @media (min-width:900px) {
+        @content;
+    }
+}
+
+@function rem($v) {
+    @return($v/14)+rem;
+}
+
+@mixin inner() {
+    max-width: 1200px;
+    width: (800/900)*100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: stretch, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+
+
+html {
+    color: $color-text;
+    font-size: (14/16) * 100%;
+    font-family: "Helvetica", "Helvetica Neue", "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    line-height: (24/14);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: block;
+    color: $color-bg;
+    background-color: $color-text;
+    padding: (21/14)+em 0;
+    width: 185px;
+    text-align: center;
+    margin-top: (42/32) +em;
+}
+
+.header {
+    &__inner {
+        @include inner()
+    }
+
+    &__flex {
+        @include flex()
+    }
+
+    &__logo {
+        padding-top: 32px;
+    }
+}
+
+.menu {
+    &__flex {
+        @include flex();
+        list-style: none;
+    }
+
+    &__left {
+        font-weight: bold;
+        font-size: rem(16);
+        line-height: (27/16);
+        color: $color-accent;
+        padding-right: 32px;
+        padding-top: 68px;
+    }
+
+    &__right {
+        font-weight: bold;
+        font-size: rem(16);
+        line-height: (27/16);
+        color: $color-text;
+        padding-top: 68px;
+    }
+}
+
+.corection {
+    &__inner {
+        @include inner()
+    }
+
+    &__color {
+        background-color: $color-back;
+    }
+}
+
+.unit {
+    &__read {
+        padding-top: (84/14) +em;
+        padding-bottom: (28/14) +em;
+    }
+
+    &__text {
+        font-size: rem(32);
+        font-weight: bold;
+    }
+}
+
+.card {
+    padding-top: (56/14)+em;
+
+    &__flex {
+        @include flex()
+    }
+
+    &__box {
+        position: relative;
+    }
+
+    &__deco {
+        position: absolute;
+        top: (21/14)+em;
+        left: (21/14)+em;
+        color: $color-bg;
+        background-color: $color-accent;
+        width: 100px;
+        text-align: center;
+        padding-top: (14/14)+em;
+        height: 42px;
+    }
+
+    &__read {
+        padding-top: (28/14)+em;
+    }
+
+    &__text {
+        font-size: rem(21);
+        font-weight: bold;
+        line-height: (31/24);
+        padding-top: (21/21)+em;
+        padding-bottom: (10/21)+em;
+    }
+
+    &__nedan {
+        color: $color-accent;
+        font-weight: bold;
+        line-height: (31/24);
+        padding-bottom: (84/21)+em;
+    }
+}
+
+.seoulify {
+    padding-bottom: (84/14) +em;
+
+    &__inner {
+        @include inner()
+    }
+
+    &__text {
+        font-size: rem(32);
+        padding-top: (87/32) + em;
+        padding-bottom: (48/32)+em;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    &__flex {
+        @include flex()
+    }
+
+    &__top {
+        padding-bottom: (56/14)+em;
+    }
+}
+
+.fashion {
+    &__read {
+        color: $color-bg;
+        padding-top: (112/14)+em;
+        padding-left: (42/14)+em;
+    }
+
+    &__text {
+        color: $color-bg;
+        font-weight: bold;
+        line-height: (42/32);
+        font-size: rem(32);
+        padding-top: (28/32)+em;
+        padding-left: (42/32)+em;
+        padding-right: (42/32)+em;
+    }
+
+    &__btn {
+        margin-left: (42/14)+em;
+    }
+
+    &__pic {
+        background: url(./images/bg_post01.png) no-repeat 100%/100%;
+        padding-bottom: (112/14)+em;
+    }
+
+    &__back {
+        background-color: $color-accent;
+        padding-bottom: (112/14)+em;
+    }
+}
+
+.footer {
+    background-color: $color-text;
+    color: $color-bg;
+    text-align: center;
+    padding-top: (84/14)+em;
+    padding-bottom: (84/14)+em;
+
+    &__inner {
+        @include inner()
+    }
+
+    &__top {
+        padding-bottom: (14/14)+em;
+    }
+}
